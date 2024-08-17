@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>Encriptar</title>
+    <link rel="stylesheet" href="./static/styles.css" />
+  </head>
+  <body>
+    <div class="grid-container">
+      <header>
+        <img src="./static/img/logo.png" alt="logo Alura" />
+        <h2>Bienvenidos al Desafío de encriptación</h2>
+      </header>
+      <main>
+        <section class="seccion1 item">
+          <h1>Encriptar/Desencriptar</h1>
+          <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+          <textarea
+            class="texto"
+            id="texto"
+            name="texto"
+            rows="10"
+            placeholder="Ingrese el texto aquí"
+          ></textarea>
+          <p>* Solo letras minúsculas y sin acentos.</p>
+          <div class="botones">
+            <button class="encriptar" onclick="encriptacion()">
+              Encriptar
+            </button>
+            <button class="desencriptar" onclick="desencriptar()">
+              Desencriptar
+            </button>
+          </div>
+        </section>
+        <section class="seccion2 item">
+          <img id="imagen" src="./static/img/personaje.png" alt="" />
+          <h2 id="mensaje">Ningún mensaje fue encontrado</h2>
+          <p>El resultado aparecerá aquí:</p>
+          <textarea class="texto" id="resultado" readonly rows="10"></textarea>
+          <button class="copiar" onclick="copiar()">Copiar</button>
+        </section>
+      </main>
+      <footer><p>Hecho por Joaquín Alexis Collao Ruiz</p></footer>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
