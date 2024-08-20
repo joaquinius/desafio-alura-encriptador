@@ -1,155 +1,163 @@
 * {
-  box-sizing: border-box;
-  margin: 0;
   padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  overflow-x: hidden;
+  background-color: white;
 }
 
 .grid-container {
-  width: 100vw;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: minmax(6.25rem, auto);
+  justify-items: stretch;
+  align-items: stretch;
 }
-
 header {
-  width: 100%;
-  display: flex;
+  display: grid;
   align-items: center;
-  padding: 1rem;
-  background-color: #0056b3;
+  grid-template-columns: 0.2fr 2fr;
+
+  grid-column: 1/3;
+  background-color: #0a3871;
   text-align: center;
-  margin-bottom: 5rem;
 }
 
 header img {
-  width: 150px;
+  width: 9.375rem;
   height: auto;
 }
 
-header h2 {
+header p {
   font-size: 1.5rem;
   color: white;
-  margin-left: 1rem;
-  flex-grow: 1;
+  margin: auto;
 }
 
-main {
-  width: 100%;
+.grid-layout {
+  grid-column: 1/3;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  padding: 1rem;
+  grid-template-columns: 2fr 1fr;
+  min-height: 76.8vh;
+  background-color: antiquewhite;
 }
 
-.item {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.grid-layout .seccion1,
+.seccion2 {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+.seccion1 {
+  height: 98%;
+  width: 98%;
+  align-items: center;
+  align-content: center;
+}
+.seccion1 h1,
+p {
+  margin-top: 1.25rem;
+  font-size: 1.5rem;
+
+  margin-bottom: 1.25rem;
 }
 
-.item h1,
-.item h2 {
-  font-size: 1.25rem;
-  margin-bottom: 10px;
-  color: #333;
-}
-
-.item p {
-  font-size: 1rem;
-  margin-bottom: 10px;
-  color: #666;
-}
-
-.texto {
+.seccion1 textarea {
   width: 100%;
-  padding: 10px;
-  border-radius: 4px;
-  border: 1px solid #ddd;
-  font-size: 1rem;
-}
-
-.botones button {
-  padding: 10px 20px;
-  margin-right: 10px;
+  height: 100%;
+  background-color: antiquewhite;
+  text-align: center;
   border: none;
-  border-radius: 4px;
-  background-color: #007bff;
+  outline: none;
+}
+.botones button {
+  padding: 0.625rem 1.25rem;
+  border: none;
+  border-radius: 4rem;
+  background-color: #0a3871;
   color: white;
   font-size: 1rem;
   cursor: pointer;
 }
-
 .botones button:hover {
-  background-color: #0056b3;
+  background-color: #717978;
 }
-
-footer {
-  width: 100%;
-  padding: 1.9rem;
-  text-align: center;
-  background-color: #0056b3;
+.seccion2 {
+  height: 98%;
+  border-radius: 20%;
+  margin-top: 1rem;
+  align-items: center;
+  align-content: center;
+  background-color: white;
+  box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.8);
+}
+.seccion2 .copiar {
+  padding: 0.625rem 1.25rem;
+  margin: 0.313rem;
+  border-radius: 0.25rem;
+  background-color: #717978;
   color: white;
+  font-size: 1rem;
+  cursor: pointer;
 }
+.seccion2 .copiar:hover {
+  background-color: #0a3871;
+}
+.seccion2 textarea {
+  width: 70%;
+  margin: auto;
+  border: none;
+  outline: none;
+}
+.seccion2 button {
+  width: 50%;
+  margin: auto;
+}
+.footer {
+  background-color: #0a3871;
+  grid-column: 1/3;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+.footer p {
+  margin-top: 2.6rem;
 
-/* Estilos para tablet */
-@media (max-width: 768px) {
-  main {
+  color: antiquewhite;
+}
+/* tablet*/
+@media (min-width: 47.375rem) and (max-width: 63.938rem) {
+  .grid-layout {
     grid-template-columns: 1fr;
   }
-
-  header h2 {
-    font-size: 1.25rem;
+  .seccion1,
+  .seccion2 {
+    width: 50%;
+    margin-top: 1.25rem;
   }
 }
-
-/* Estilos para móvil */
-@media (max-width: 480px) {
-  header {
-    width: 100%;
-    padding: 2rem;
+/* movil */
+@media (min-width: 20rem) and (max-width: 26.563rem) {
+  .grid-layout {
+    display: flex;
+    flex-direction: column;
   }
-  img {
+  .seccion1 h1,
+  p {
+    margin: 1.25rem;
+  }
+
+  .seccion2 img {
     display: none;
   }
-  header h2 {
-    font-size: 1rem;
+  .seccion2 h2 {
+    font-size: 1em;
+    margin-top: 1rem;
   }
-
-  main {
-    gap: 15px;
-  }
-
-  .item {
-    padding: 15px;
-  }
-
-  .item h1,
-  .item h2 {
-    font-size: 1rem;
-  }
-
-  .texto {
-    font-size: 0.75rem;
-  }
-
-  .botones button {
-    font-size: 0.75rem;
-    padding: 8px 16px;
-  }
-
-  footer {
-    font-size: 0.75rem;
-    padding: 1.5rem;
+  .seccion1,
+  .seccion2 {
+    width: 90%;
+    margin: 1.25rem;
   }
 }

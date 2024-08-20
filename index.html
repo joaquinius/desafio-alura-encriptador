@@ -12,12 +12,12 @@
   </head>
   <body>
     <div class="grid-container">
-      <header>
+      <header class="header">
         <img src="./static/img/logo.png" alt="logo Alura" />
-        <h2>Bienvenidos al Desafío de encriptación</h2>
+        <p>Bienvenidos al Desafío de encriptación</p>
       </header>
-      <main>
-        <section class="seccion1 item">
+      <main class="grid-layout">
+        <section class="seccion1">
           <h1>Encriptar/Desencriptar</h1>
           <p>Ingresa el texto que desees encriptar o desencriptar.</p>
           <textarea
@@ -25,7 +25,7 @@
             id="texto"
             name="texto"
             rows="10"
-            placeholder="Ingrese el texto aquí"
+            placeholder="escribe aqui"
           ></textarea>
           <p>* Solo letras minúsculas y sin acentos.</p>
           <div class="botones">
@@ -37,7 +37,7 @@
             </button>
           </div>
         </section>
-        <section class="seccion2 item">
+        <section class="seccion2">
           <img id="imagen" src="./static/img/personaje.png" alt="" />
           <h2 id="mensaje">Ningún mensaje fue encontrado</h2>
           <p>El resultado aparecerá aquí:</p>
@@ -45,7 +45,9 @@
           <button class="copiar" onclick="copiar()">Copiar</button>
         </section>
       </main>
-      <footer><p>Hecho por Joaquín Alexis Collao Ruiz</p></footer>
+      <footer class="footer">
+        <p>Hecho por Joaquín Alexis Collao Ruiz</p>
+      </footer>
     </div>
     <script src="app.js"></script>
   </body>
